@@ -1,0 +1,3 @@
+trigger: none
+pool: string
+steps: [ task
