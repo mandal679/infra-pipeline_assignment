@@ -4,3 +4,13 @@ steps:
 - task: TerraformInstaller@1
   inputs:
     terraformVersion: 'latest'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\Infra_pipe_line-Assignment\Environment\Dev'
+    backendServiceArm: 'prasantaservice'
+    backendAzureRmStorageAccountName: 'prasstg'
+    backendAzureRmContainerName: 'prascon'
+    backendAzureRmKey: 'infra.tfstate'
